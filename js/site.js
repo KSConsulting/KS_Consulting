@@ -81,6 +81,18 @@
     });
   }
 
+  // Vídeo de case: respeita o recorte (data-clip-start / data-clip-end).
+  document.querySelectorAll('video[data-clip-start]').forEach((v) => {
+    const start = parseFloat(v.dataset.clipStart || '0');
+    const end = parseFloat(v.dataset.clipEnd || '0');
+    const seekIn = () => { if (v.currentTime < start - 0.5) v.currentTime = start; };
+    v.addEventListener('loadedmetadata', seekIn);
+    v.addEventListener('play', seekIn);
+    v.addEventListener('timeupdate', () => {
+      if (end && v.currentTime >= end) { v.pause(); v.currentTime = start; }
+    });
+  });
+
   // Lucide icons (stroke 1.75 conforme o design system).
   const drawIcons = () => window.lucide && window.lucide.createIcons({ attrs: { 'stroke-width': 1.75 } });
   if (window.lucide) drawIcons(); else window.addEventListener('load', drawIcons);
