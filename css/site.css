@@ -57,6 +57,8 @@ a:hover{color:var(--cyan)}
 /* Responsive */
 @media (max-width:1024px){
   .case-video-row{grid-template-columns:1fr!important}
+  .case-video-row--flip > figure{order:1!important}
+  .case-video-row--flip > div{order:2!important}
   .grid-hero{grid-template-columns:1fr!important}
   h1{font-size:44px!important}
   h2{font-size:32px!important}
