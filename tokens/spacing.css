@@ -1,0 +1,10 @@
+:root{
+--space-1:4px;--space-2:8px;--space-3:16px;--space-4:24px;--space-5:32px;--space-6:40px;
+--space-7:48px;--space-8:64px;--space-9:80px;--space-10:96px;--space-11:128px;
+
+--container-max:1280px;--container-narrow:1040px;
+--pad-desktop:32px;--pad-tablet:24px;--pad-mobile:20px;
+--grid-columns:12; /* @kind other */--grid-gap:24px;
+--section-y:96px;--section-y-lg:128px;
+--bg-grid-size:56px;
+}

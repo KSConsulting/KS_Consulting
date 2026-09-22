@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Landing page KS" description="Página de captação dark premium: hero com métricas, metodologia em 3 etapas e CTA final." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.js"></script>
+<style>body{margin:0;background:#080E1C}@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}</style>
+</helmet>
+<div style="background:#080E1C;font-family:Inter,system-ui,sans-serif;color:#B8C1D1;min-height:100%">
+<div style="position:relative;overflow:hidden">
+<div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px"></div>
+<div style="position:absolute;inset:0;background-image:radial-gradient(60% 60% at 50% 0%,rgba(0,102,255,.18) 0%,rgba(8,14,28,0) 70%),radial-gradient(50% 50% at 80% 20%,rgba(0,217,255,.12) 0%,rgba(8,14,28,0) 70%)"></div>
+<header style="position:relative;max-width:1280px;margin:0 auto;padding:0 32px;height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08)">
+<div style="display:flex;align-items:center;gap:14px"><img src="../../assets/ks-mark-light.png" alt="" style="height:38px"><span style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;letter-spacing:-.02em;color:#F7F9FC">KS <span style="font-weight:400;color:#B8C1D1">Consulting</span></span></div>
+<nav style="display:flex;gap:32px;font-size:15px;color:#697386"><span>Início</span><span>Serviços</span><span>Cases</span><span>Contato</span></nav>
+<x-import component-from-global-scope="KSConsultingDesignSystem_cfa9b6.Button" size="sm" hint-size="150px,40px">Começar agora</x-import>
+</header>
+<section style="position:relative;max-width:1280px;margin:0 auto;padding:96px 32px 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:28px;animation:rise 700ms cubic-bezier(.16,1,.3,1) both">
+<span style="display:inline-flex;align-items:center;gap:8px;align-self:flex-start;height:28px;padding:0 12px;border-radius:999px;background:rgba(0,102,255,.12);border:1px solid rgba(32,164,255,.35);color:#20A4FF;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase"><span style="width:6px;height:6px;border-radius:999px;background:#20A4FF"></span>Consultoria de performance digital</span>
+<h1 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:60px;font-weight:600;line-height:1.04;letter-spacing:-.03em;color:#F7F9FC">Transforme sua operação em <span style="color:#20A4FF">resultado</span> mensurável.</h1>
+<p style="margin:0;font-size:20px;line-height:1.6;max-width:520px;color:#B8C1D1">Estratégia, mídia e dados no mesmo time. Montamos a operação de aquisição que a sua receita precisa — e provamos cada real investido.</p>
+<div style="display:flex;gap:16px">
+<x-import component-from-global-scope="KSConsultingDesignSystem_cfa9b6.Button" size="lg" hint-size="190px,52px">Agendar diagnóstico</x-import>
+<x-import component-from-global-scope="KSConsultingDesignSystem_cfa9b6.Button" size="lg" variant="secondary" hint-size="140px,52px">Ver cases</x-import>
+</div>
+<div style="display:flex;gap:48px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)">
+<div><div style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:#F7F9FC;letter-spacing:-.03em">+500</div><div style="font-size:14px;color:#697386">Projetos entregues</div></div>
+<div><div style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:#BAFC04;letter-spacing:-.03em">98%</div><div style="font-size:14px;color:#697386">Retenção de clientes</div></div>
+<div><div style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:#00D9FF;letter-spacing:-.03em">24/7</div><div style="font-size:14px;color:#697386">Monitoramento</div></div>
+</div>
+</div>
+<div style="background:#162236;border:1px solid #26344A;border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.45);padding:24px;animation:rise 700ms cubic-bezier(.16,1,.3,1) 300ms both">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#697386">ROI — últimos 90 dias</span><span style="font-size:12px;font-weight:600;color:#BAFC04">AO VIVO</span></div>
+<div style="display:flex;gap:32px;margin-bottom:8px">
+<div><div style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:#BAFC04;letter-spacing:-.03em">312%</div><div style="font-size:13px;color:#697386">Retorno sobre investimento</div></div>
+<div><div style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:#F7F9FC;letter-spacing:-.03em">1.284</div><div style="font-size:13px;color:#697386">Leads qualificados / mês</div></div>
+</div>
+<svg viewBox="0 0 480 110" preserveAspectRatio="none" style="width:100%;height:120px"><polyline points="0,95 60,78 120,84 180,58 240,64 300,36 360,42 420,18 470,8" fill="none" stroke="#BAFC04" stroke-width="2" stroke-linejoin="round"></polyline><circle cx="470" cy="8" r="4" fill="#BAFC04"></circle></svg>
+</div>
+</section>
+</div>
+<section style="max-width:1280px;margin:0 auto;padding:96px 32px">
+<div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#697386;margin-bottom:16px"><span style="color:#20A4FF">01</span> — Metodologia</div>
+<h2 style="margin:0 0 48px;font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:600;letter-spacing:-.02em;color:#F7F9FC;max-width:720px">Três etapas para um crescimento <span style="color:#20A4FF">previsível</span></h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+<div style="background:rgba(16,24,39,.70);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);padding:32px;display:flex;flex-direction:column;gap:14px">
+<div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#697386"><span style="color:#20A4FF">01</span> — Etapa</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:#F7F9FC">Diagnóstico</h3>
+<p style="margin:0;font-size:15px;line-height:1.6">Mapeamos canais, funil e unit economics antes de investir o primeiro real.</p>
+</div>
+<div style="background:linear-gradient(160deg,rgba(32,164,255,.12) 0%,rgba(16,24,39,.85) 55%);border:1px solid #0066FF;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.35),0 0 30px rgba(0,102,255,.25);padding:32px;display:flex;flex-direction:column;gap:14px">
+<div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#697386"><span style="color:#BAFC04">02</span> — Etapa</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:#F7F9FC">Operação</h3>
+<p style="margin:0;font-size:15px;line-height:1.6">Mídia, criativo e CRO rodando em ciclos semanais com meta de receita.</p>
+</div>
+<div style="background:rgba(16,24,39,.70);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);padding:32px;display:flex;flex-direction:column;gap:14px">
+<div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#697386"><span style="color:#20A4FF">03</span> — Etapa</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:#F7F9FC">Escala</h3>
+<p style="margin:0;font-size:15px;line-height:1.6">O que prova retorno vira orçamento. O que não prova, sai do ar.</p>
+</div>
+</div>
+</section>
+<section style="position:relative;overflow:hidden;padding:112px 32px;text-align:center">
+<div style="position:absolute;inset:0;background-image:radial-gradient(60% 60% at 50% 100%,rgba(0,102,255,.18) 0%,rgba(8,14,28,0) 70%)"></div>
+<div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:28px">
+<div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#697386"><span style="color:#20A4FF">02</span> — Próximo passo</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:600;letter-spacing:-.02em;color:#F7F9FC;max-width:760px">Vamos olhar seus números <span style="color:#BAFC04">juntos</span>.</h2>
+<p style="margin:0;font-size:18px;max-width:520px">Diagnóstico gratuito de 30 minutos com um especialista sênior. Sem apresentação comercial.</p>
+<x-import component-from-global-scope="KSConsultingDesignSystem_cfa9b6.Button" size="lg" hint-size="190px,52px">Agendar diagnóstico</x-import>
+</div>
+</section>
+</div>
+
+</x-dc>
+</body>
+</html>

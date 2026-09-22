@@ -1,0 +1,31 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Forms" subtitle="Input, Select, Checkbox, Radio, Switch" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:24px;background:var(--bg-primary)}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const { Input, Select, Checkbox, Radio, Switch, Icon } = window.KSConsultingDesignSystem_cfa9b6;
+function Demo(){
+  const [seg,setSeg]=React.useState('E-commerce');
+  return (
+  <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:24}}>
+    <Input label="E-mail corporativo" placeholder="voce@empresa.com.br" icon={<Icon name="mail" size={18}/>} hint="Resposta em até 1 dia útil"/>
+    <Select label="Investimento mensal" options={["Até R$ 5 mil","R$ 5–20 mil","Acima de R$ 20 mil"]}/>
+    <Input label="WhatsApp" placeholder="(11) 90000-0000" error="Número inválido"/>
+    <div style={{display:'flex',flexDirection:'column',gap:14,justifyContent:'center'}}>
+      <div style={{display:'flex',gap:20}}>
+        {["Serviço","E-commerce"].map(v=><Radio key={v} name="s" value={v} label={v} checked={seg===v} onChange={setSeg}/>)}
+      </div>
+      <Checkbox defaultChecked label="Aceito receber o diagnóstico por e-mail"/>
+      <div style={{display:'flex',gap:24}}>
+        <Switch defaultChecked label="Relatório semanal"/>
+        <Switch tone="neon" defaultChecked label="Anual (–20%)"/>
+      </div>
+    </div>
+  </div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

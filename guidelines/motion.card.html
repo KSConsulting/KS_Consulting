@@ -1,0 +1,10 @@
+<!-- @dsCard group="Brand" viewport="700x180" name="Motion" subtitle="Reveal 700ms ease-out-expo, 100ms stagger, −4px hover lift" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.b{height:88px;background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-card);animation:rise var(--duration-enter) var(--ease-out-expo) both;display:flex;align-items:flex-end;padding:12px;font-size:10px;font-family:var(--font-mono);color:var(--text-muted);transition:transform var(--duration-hover) var(--ease-standard),box-shadow var(--duration-hover) var(--ease-standard)}
+.b:hover{transform:translateY(-4px);box-shadow:var(--glow-blue)}
+</style></head><body style="margin:0;padding:24px;background:var(--bg-primary)">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+<div class="b" style="animation-delay:0ms">0ms</div><div class="b" style="animation-delay:100ms">+100ms</div>
+<div class="b" style="animation-delay:200ms">+200ms</div><div class="b" style="animation-delay:300ms">+300ms</div>
+</div></body></html>

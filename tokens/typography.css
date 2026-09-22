@@ -1,0 +1,28 @@
+:root{
+--font-heading:"Space Grotesk","Inter",system-ui,sans-serif;
+--font-body:"Inter",system-ui,sans-serif;
+--font-mono:ui-monospace,"SFMono-Regular",Menlo,monospace;
+
+/* desktop scale (~1.25 progression) */
+--text-display-xl:72px;--text-display-lg:60px;
+--text-h1:48px;--text-h2:40px;--text-h3:30px;--text-h4:24px;
+--text-body-lg:20px;--text-body:16px;--text-body-sm:14px;--text-caption:12px;
+
+/* mobile scale */
+--text-display-xl-m:44px;--text-display-lg-m:40px;
+--text-h1-m:36px;--text-h2-m:32px;--text-h3-m:26px;--text-h4-m:22px;
+--text-body-lg-m:18px;
+
+/* weights */
+--weight-regular:400; /* @kind font */--weight-medium:500; /* @kind font */--weight-semibold:600; /* @kind font */--weight-bold:700; /* @kind font */
+
+/* line heights */
+--leading-display:1.04; /* @kind font */--leading-heading:1.14; /* @kind font */--leading-snug:1.35; /* @kind font */--leading-body:1.6; /* @kind font */--leading-loose:1.75; /* @kind font */
+
+/* tracking */
+--tracking-display:-.03em; /* @kind font */--tracking-heading:-.02em; /* @kind font */--tracking-body:0; /* @kind font */--tracking-label:.14em; /* @kind font */
+}
+@media (max-width:768px){:root{
+--text-display-xl:var(--text-display-xl-m);--text-display-lg:var(--text-display-lg-m);
+--text-h1:var(--text-h1-m);--text-h2:var(--text-h2-m);--text-h3:var(--text-h3-m);--text-h4:var(--text-h4-m);
+--text-body-lg:var(--text-body-lg-m);}}
