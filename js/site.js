@@ -5,8 +5,8 @@
     whatsapp: '5511939388572',                  // DDI+DDD+numero, so digitos
     // Pagina de agendamentos do Google Calendar (o visitante reserva o horario).
     calendly: 'https://calendar.app.google/vKKCXnH49fx6Uycy7',
-    mensagem: 'Ola! Vim pelo site da KS Consulting e quero agendar o diagnostico de 30 minutos.',
-    mensagemAgenda: 'Ola! Quero marcar um horario para o diagnostico de 30 minutos da KS Consulting.',
+    mensagem: 'Ola! Vim pelo site da KS Consulting e quero agendar o diagnostico cirurgico.',
+    mensagemAgenda: 'Ola! Quero marcar um horario para o diagnostico cirurgico da KS Consulting.',
   };
   // ───────────────────────────────────────────────────────────────────────────
 
