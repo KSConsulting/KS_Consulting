@@ -93,6 +93,26 @@
     });
   });
 
+  // Logo animado: reinicia a animação a cada 10s. SVG dentro de <img> não roda
+  // script, então trocamos o src por um blob novo (mesmo conteúdo, sem rede).
+  const LOGO_RESTART_MS = 10000;
+  const logos = document.querySelectorAll('img.site-logo');
+  if (!reduced && logos.length && window.fetch && window.URL && URL.createObjectURL) {
+    fetch(logos[0].src)
+      .then((r) => (r.ok ? r.text() : Promise.reject()))
+      .then((svg) => {
+        let current = null;
+        setInterval(() => {
+          if (document.hidden) return;
+          const next = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
+          logos.forEach((img) => { img.src = next; });
+          if (current) URL.revokeObjectURL(current);
+          current = next;
+        }, LOGO_RESTART_MS);
+      })
+      .catch(() => {});
+  }
+
   // Lucide icons (stroke 1.75 conforme o design system).
   const drawIcons = () => window.lucide && window.lucide.createIcons({ attrs: { 'stroke-width': 1.75 } });
   if (window.lucide) drawIcons(); else window.addEventListener('load', drawIcons);
