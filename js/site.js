@@ -36,7 +36,7 @@
       const missing = required.filter((k) => !String(d.get(k) || '').trim());
       if (missing.length) {
         msg.textContent = 'Preencha nome, empresa e WhatsApp.';
-        msg.style.color = '#20A4FF';
+        msg.style.color = '#FB923C';
         form.appendChild(msg);
         return;
       }
@@ -47,7 +47,7 @@
         `WhatsApp: ${d.get('whatsapp')}\n` +
         `Gargalo: ${d.get('gargalo') || '-'}`;
       msg.textContent = 'Abrindo o WhatsApp com seus dados…';
-      msg.style.color = '#BAFC04';
+      msg.style.color = '#34D399';
       form.appendChild(msg);
       window.open(waUrl(text), '_blank', 'noopener');
     });
@@ -111,6 +111,14 @@
         }, LOGO_RESTART_MS);
       })
       .catch(() => {});
+  }
+
+  // Header flutuante: reforça o vidro depois que a página rola.
+  const hdr = document.getElementById('hdr');
+  if (hdr) {
+    const onScroll = () => hdr.classList.toggle('is-scrolled', scrollY > 24);
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
 
   // Lucide icons (stroke 1.75 conforme o design system).
