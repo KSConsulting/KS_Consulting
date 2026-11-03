@@ -93,6 +93,20 @@
     });
   });
 
+  // Vídeo vertical (ImobFlow): sem áudio, toca mudo em loop só quando está na tela.
+  // preload="none" no HTML evita baixar o arquivo antes de o visitante chegar à seção.
+  const inview = document.querySelectorAll('video[data-inview-play]');
+  if (!reduced && inview.length && 'IntersectionObserver' in window) {
+    const vio = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        const v = en.target;
+        if (en.isIntersecting) { v.muted = true; v.play().catch(() => {}); }
+        else if (!v.paused) v.pause();
+      });
+    }, { threshold: 0.4 });
+    inview.forEach((v) => vio.observe(v));
+  }
+
   // Logo animado: reinicia a animação a cada 10s. SVG dentro de <img> não roda
   // script, então trocamos o src por um blob novo (mesmo conteúdo, sem rede).
   const LOGO_RESTART_MS = 10000;
