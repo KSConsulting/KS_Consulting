@@ -107,6 +107,58 @@
     inview.forEach((v) => vio.observe(v));
   }
 
+  // Cases por área: um card aberto por vez; link direto com #cases-pesquisa etc.
+  const areaCards = Array.from(document.querySelectorAll('.area-card'));
+  const closeMore = (panel) => {
+    panel.querySelectorAll('.more-btn').forEach((btn) => {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.querySelector('[data-more]').textContent = 'Saiba mais';
+    });
+    panel.querySelectorAll('.area-more').forEach((m) => { m.hidden = true; });
+  };
+  const openArea = (id) => {
+    areaCards.forEach((card) => {
+      const panel = document.getElementById(card.dataset.area);
+      const isOpen = card.dataset.area === id;
+      card.setAttribute('aria-expanded', String(isOpen));
+      card.querySelector('[data-go]').textContent = isOpen ? 'Fechar' : 'Ver cases';
+      if (!isOpen) {
+        panel.querySelectorAll('video').forEach((v) => v.pause());
+        closeMore(panel);
+      }
+      panel.hidden = !isOpen;
+    });
+  };
+  const fromHash = () => {
+    const id = location.hash.slice(1);
+    const card = areaCards.find((c) => c.dataset.area === id);
+    if (!card) return;
+    openArea(id);
+    card.scrollIntoView({ block: 'start' });
+  };
+  areaCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const wasOpen = card.getAttribute('aria-expanded') === 'true';
+      openArea(wasOpen ? null : card.dataset.area);
+      history.replaceState(null, '', wasOpen ? '#cases' : '#' + card.dataset.area);
+      if (!wasOpen && matchMedia('(max-width:900px)').matches) card.scrollIntoView({ block: 'start' });
+    });
+  });
+  document.querySelectorAll('.more-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const more = document.getElementById(btn.getAttribute('aria-controls'));
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', String(open));
+      btn.querySelector('[data-more]').textContent = open ? 'Ver menos' : 'Saiba mais';
+      if (!open) more.querySelectorAll('video').forEach((v) => v.pause());
+      more.hidden = !open;
+    });
+  });
+  addEventListener('hashchange', fromHash);
+  fromHash();
+  // A altura da página muda quando fontes e imagens terminam de carregar: refaz a rolagem.
+  addEventListener('load', () => { (document.fonts ? document.fonts.ready : Promise.resolve()).then(fromHash); });
+
   // Logo animado: reinicia a animação a cada 10s. SVG dentro de <img> não roda
   // script, então trocamos o src por um blob novo (mesmo conteúdo, sem rede).
   const LOGO_RESTART_MS = 10000;
