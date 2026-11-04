@@ -142,12 +142,13 @@ p{margin:0}
 .card--featured{border-color:var(--o-line-2);background:radial-gradient(120% 80% at 50% 0%,rgba(249,115,22,.08) 0%,rgba(255,255,255,.02) 60%);box-shadow:var(--panel-shadow),0 20px 50px -20px rgba(234,88,12,.25)}
 .card--solid{background:rgba(10,10,10,.8)}
 .card__foot{display:flex;flex-direction:column;gap:10px;padding-top:16px;margin-top:6px;border-top:1px solid var(--line-soft);font-size:13px;color:var(--slate-300)}
-.card__foot span{display:flex;gap:10px;align-items:center}
-.card__foot span::before{content:"";width:4px;height:4px;border-radius:1px;transform:rotate(45deg);background:var(--orange-500);flex:none}
+.card__foot span{display:flex;gap:10px;align-items:flex-start}
+.card__foot span::before{content:"";width:4px;height:4px;margin-top:7px;border-radius:1px;transform:rotate(45deg);background:var(--orange-500);flex:none}
 .icon-tile{width:48px;height:48px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex:none;margin-bottom:10px;background:var(--o-soft);border:1px solid var(--o-line);color:var(--orange-500);transition:transform 500ms var(--ease),background 500ms var(--ease)}
 .icon-tile i,.icon-tile svg{width:20px;height:20px;display:block}
 .icon-tile--400{color:var(--orange-400)} .icon-tile--300{color:var(--orange-300)}
 .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.grid-3 .h3{font-size:16px;line-height:1.35}
 .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
 
 /* ─── Stats ──────────────────────────────────────────────── */
