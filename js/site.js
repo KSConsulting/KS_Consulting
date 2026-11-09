@@ -116,6 +116,14 @@
     });
     panel.querySelectorAll('.area-more').forEach((m) => { m.hidden = true; });
   };
+  // Ao abrir uma área, o "Saiba mais" já vem aberto (o visitante ainda pode recolher).
+  const openMore = (panel) => {
+    panel.querySelectorAll('.more-btn').forEach((btn) => {
+      btn.setAttribute('aria-expanded', 'true');
+      btn.querySelector('[data-more]').textContent = 'Ver menos';
+    });
+    panel.querySelectorAll('.area-more').forEach((m) => { m.hidden = false; });
+  };
   const openArea = (id) => {
     areaCards.forEach((card) => {
       const panel = document.getElementById(card.dataset.area);
@@ -125,6 +133,8 @@
       if (!isOpen) {
         panel.querySelectorAll('video').forEach((v) => v.pause());
         closeMore(panel);
+      } else if (panel.hidden) {
+        openMore(panel);
       }
       panel.hidden = !isOpen;
     });
@@ -157,7 +167,8 @@
   addEventListener('hashchange', fromHash);
   fromHash();
   // A altura da página muda quando fontes e imagens terminam de carregar: refaz a rolagem.
-  addEventListener('load', () => { (document.fonts ? document.fonts.ready : Promise.resolve()).then(fromHash); });
+  // Depois do load o navegador ainda faz o próprio salto até o #id; a rolagem final vem depois dele.
+  addEventListener('load', () => { (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(fromHash, 80)); });
 
   // Logo animado: reinicia a animação a cada 10s. SVG dentro de <img> não roda
   // script, então trocamos o src por um blob novo (mesmo conteúdo, sem rede).
