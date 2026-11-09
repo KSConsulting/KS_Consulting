@@ -134,14 +134,14 @@
     const card = areaCards.find((c) => c.dataset.area === id);
     if (!card) return;
     openArea(id);
-    card.scrollIntoView({ block: 'start' });
+    card.scrollIntoView({ block: 'start', behavior: 'instant' });
   };
   areaCards.forEach((card) => {
     card.addEventListener('click', () => {
       const wasOpen = card.getAttribute('aria-expanded') === 'true';
       openArea(wasOpen ? null : card.dataset.area);
       history.replaceState(null, '', wasOpen ? '#cases' : '#' + card.dataset.area);
-      if (!wasOpen && matchMedia('(max-width:900px)').matches) card.scrollIntoView({ block: 'start' });
+      if (!wasOpen && matchMedia('(max-width:900px)').matches) card.scrollIntoView({ block: 'start', behavior: 'instant' });
     });
   });
   document.querySelectorAll('.more-btn').forEach((btn) => {

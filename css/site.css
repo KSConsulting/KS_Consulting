@@ -395,3 +395,16 @@ p{margin:0}
   .case-feature,.case-feature--v{grid-template-columns:minmax(0,1fr)}
   .case-feature--v .media{justify-self:center;width:100%;max-width:320px}
 }
+
+/* ─── Outros cases em 3 colunas (Pesquisa Operacional / Gestão) ─ */
+.mini-cases--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mini-cases + .mini-cases{margin-top:20px}
+.mini-case video.v-45{aspect-ratio:4/5;object-fit:contain}
+.mini-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+.mini-tiles .stat__v{font-size:22px}
+.mini-case__txt{flex:1}
+@media (max-width:1024px){.mini-cases--3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.mini-cases--3{grid-template-columns:minmax(0,1fr)}}
+.mini-case--wide{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:center}
+.mini-cases:has(> .mini-case--wide:only-child){grid-template-columns:minmax(0,1fr)}
+@media (max-width:900px){.mini-case--wide{grid-template-columns:minmax(0,1fr)}}
